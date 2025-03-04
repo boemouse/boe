@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Website{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        body {
+            background-image: url('{% static 'mentor/bg.jpg' %}'); /* Replace with the path to your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #ffffff; /* Optional: Change text color for contrast */
+        }
+    </style>
+</head>
+<body>
+    <button class="sidebar-toggle">Toggle Sidebar</button>
+    <div class="sidebar">
+        <h2>Sidebar Menu</h2>
+        <hr />
+        <marquee behavior="scroll" direction="left">greatest of all the time</marquee>
+        <hr />
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Services List at the Bottom -->
+    <footer>
+        <h2>Our Services</h2>
+        <ul>
+            <li>Service 1</li>
+            <li>Service 2</li>
+            <li>Service 3</li>
+            <li>Service 4</li>
+        </ul>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sidebarToggle = document.querySelector(".sidebar-toggle");
+            const sidebar = document.querySelector(".sidebar");
+            sidebarToggle.addEventListener("click", function() {
+                sidebar.classList.toggle("collapsed");
+            });
+        });
+    </script>
+</body>
+<footer>
+    <div class="add-row"><img src="{% static 'mentor/bg.jpg' %}" alt=""></div>
+
+</footer>
+</html>

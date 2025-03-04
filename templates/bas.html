@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Website
+	{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        body {
+            background-image: url('{% static 'images/your-image.jpg' %}'); /* Replace with the path to your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #ffffff; /* Optional: Change text color for contrast */
+        }
+    </style>
+</head>
+<body>
+    <button class="sidebar-toggle">Toggle Sidebar</button>
+    <div class="sidebar">
+        <h2>Sidebar Menu</h2>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Services List at the Bottom -->
+    <footer>
+        <h2>Our Services</h2>
+        <ul>
+            <li>Service 1</li>
+            <li>Service 2</li>
+            <li>Service 3</li>
+            <li>Service 4</li>
+        </ul>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sidebarToggle = document.querySelector(".sidebar-toggle");
+            const sidebar = document.querySelector(".sidebar");
+            sidebarToggle.addEventListener("click", function() {
+                sidebar.classList.toggle("collapsed");
+            });
+        });
+    </script>
+</body>
+</html>

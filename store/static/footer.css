@@ -1,0 +1,33 @@
+footer {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .col {
+    flex: 1;
+    padding: 1rem;
+}
+
+footer h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
